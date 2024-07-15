@@ -26,7 +26,7 @@ $ npm install
 
 ```bash
 # Subir o docker
-$ docker-compose up -d
+$ docker-compose up --build
 ```
 
 ```bash
