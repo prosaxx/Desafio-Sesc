@@ -1,0 +1,68 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model Aluno {
+    id_aluno        Int      @id @default(autoincrement())
+    nome      String   
+    data_nascimento      DateTime   
+    logradouro    String
+    numero   String
+    bairro String
+    cidade String
+    estado String
+    data_criacao DateTime @default(now())
+    cep  String
+    matricula Matricula[]
+    
+
+    @@map("aluno")
+}
+
+model Curso {
+    id_curso            Int             @id @default(autoincrement())
+    nome          String          
+    id_professor       Int       
+    data_criacao     DateTime        @default(now())
+    professor      Professor    @relation(fields: [id_professor], references: [id_professor])
+    matricula Matricula[]
+
+    @@map("curso")
+}
+
+model Professor {
+    id_professor            Int             @id @default(autoincrement())    
+    nome                     String                     @db.VarChar(255)
+    data_nascimento                  DateTime
+    data_criacao                 DateTime                   @default(now())
+    updatedAt                 DateTime                   @updatedAt
+    curso Curso[]
+    
+
+    @@map("professor")
+}
+
+model Matricula {
+    id_matricula            Int             @id @default(autoincrement())
+    id_aluno                Int
+    id_curso                Int    
+    data_criacao            DateTime                   @default(now())
+    aluno      Aluno    @relation(fields: [id_aluno], references: [id_aluno])
+    curso      Curso    @relation(fields: [id_curso], references: [id_curso])
+ 
+    
+    
+
+    @@map("matricula")
+}

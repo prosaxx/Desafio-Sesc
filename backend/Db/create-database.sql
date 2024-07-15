@@ -1,0 +1,2 @@
+CREATE DATABASE test_sesc2024
+GO
