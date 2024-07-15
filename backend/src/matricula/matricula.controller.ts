@@ -11,6 +11,7 @@ export class MatriculaController {
 
   @Post()
   create(@Body() createMatriculaDto: CreateMatriculaDto) {
+    createMatriculaDto.data_criacao = new Date();
     return this.matriculaService.create(createMatriculaDto);
   }
 
