@@ -1,12 +1,8 @@
-# API HP Green Horizon
-
+# API Sesc test
+# Banckend
   [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
   [circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">API Green Horizon HP - <a href="http://nodejs.org" target="_blank">Node.js</a> Rest API with <a href="https://github.com/nestjs/nest" target="_blank">NestJs</a>, Typescript, DDD, Clean Architecture and Automated Tests.
-  <br>
-  © Copyright 2024 HP Development Company, L.P. | Development by FIT - Flex Institute of Technology upon request from HP Brazil
-  </p>
+  
   <p align="center">
   <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
   <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
@@ -29,6 +25,11 @@
 ## Installation
 
 ```bash
+# Pelo terminal navegue até a pasta backend
+$ cd backend
+```
+
+```bash
 # Instalar CLI do Nestjs
 $ npm install -g @nestjs/cli
 ```
@@ -45,19 +46,13 @@ $ docker-compose up -d
 
 ```bash
 # Gerar o schema do Prisma
-$ npm run generate:dev
+$ npx prisma generate
 ```
 
 ```bash
 # Rodar as migrations do Prisma
-$ npm run migrate:dev
+$ npx prisma migrate dev
 ```
-
-```bash
-# Rodar o Seed para popular o banco com dados iniciais
-$ npm run seed
-```
-
 
 ## Running the app
 
@@ -70,6 +65,11 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+```
+
+```bash
+# No navegador acesse a rota
+$ localhost:3000/api/v1
 ```
 
 ## Test
@@ -85,16 +85,27 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+# Frontend
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## Installation
 
-## Stay in touch
+```bash
+# Pelo terminal navegue até a pasta frontend
+$ cd backend
+```
 
-- Author - [Kamil My�liwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```bash
+# Instalar as Libs
+$ npm install
+```
 
-## License
+```bash
+# Rode a aplicação frontend
+$ npm run start
+```
 
-Nest is [MIT licensed](LICENSE).
+
+```bash
+# No navegador acesse a rota
+$ localhost:4200
+```
