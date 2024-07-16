@@ -5,7 +5,7 @@
 ## Download
 
 - [Node.js](https://nodejs.org/en/download/package-manager) @version 20.9.0
-- [Docker WSL2](https://github.com/codeedu/wsl2-docker-quickstart) @version latest
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) @version latest
 
 ## Installation
 
@@ -76,7 +76,7 @@ $ npm run test:cov
 
 ```bash
 # Pelo terminal navegue até a pasta frontend
-$ cd frontedn
+$ cd frontend
 ```
 
 ```bash
